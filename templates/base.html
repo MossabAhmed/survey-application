@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"  data-theme="cupcake">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A web project using HTMX and DaisyUI.">
+        <meta name="keywords" content="HTMX, DaisyUI, Django, Web, Project">
+        {% comment %} CDNs {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js"
+                integrity="sha384-ZBXiYtYQ6hJ2Y0ZNoYuI+Nq5MqWBr+chMrS/RkXpNzQCApHEhOt2aY8EJgqwHLkJ"
+                crossorigin="anonymous"></script>
+        <script defer
+                src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="{% static 'survey/output.css' %}">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            htmx.on('htmx:configRequest', function(evt) {
+                evt.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+            });
+        </script>
+        {% include "partials/navbar.html" %}
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

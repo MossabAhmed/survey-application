@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake;
+}
+
+.Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  line-height: 1.25rem;
+  color: rgb(107 114 128);
+  background-color: #ffffff;
+  border-width: 1px; /* border */
+  border-color: rgb(209 213 219);
+  border-style: solid;
+}
+
+.primary {
+  background-color: oklch(85% 0.138 181.071) !important;
+  color: rgb(82, 85, 92) !important;
+}
+
+.Pagination:hover {
+  background-color: rgb(243 244 246); /* hover:bg-gray-100 */
+  color: rgb(55 65 81);
+}
+
+.survey-table-body {
+  transition: opacity 300ms ease-in-out;
+}
+
+.survey-table-body.htmx-request {
+  opacity: 0.2;
+}

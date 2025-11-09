@@ -1,0 +1,35 @@
+<div class="card w-full bg-white shadow-md border border-gray-200 h-[270px]">
+    <div class="card-body">
+        <div class="flex items-center justify-between">
+            <h2 class="card-title font-bold text-xl line-clamp-1" title="{{ title }}">
+                <!-- title -->
+                {{ title }}
+            </h2>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Draft</span>
+        </div>
+        <p class="text-gray-500 mt-1 my-1 line-clamp-3">
+            <!-- description -->
+            {{ description }}
+        </p>
+        <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+            <div class="flex items-center">
+                <svg class="w-4 h-4 mr-1.5"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     fill="currentColor"
+                     viewBox="0 0 20 20">
+                    <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.5 3.5 0 0 1 9 12.5a3.5 3.5 0 0 1 5.951 2.012A8.949 8.949 0 0 1 10 18Z" />
+                </svg>
+                <!-- user -->
+                {{ created_by }}
+            </div>
+            <div class="text-xs text-gray-400">
+                <span>Updated:  <span class="inline w-auto xl:block xl:w-[105px]">{{ last_updated|date:"Y-m-d H:i:s" }}</span> </span>
+            </div>
+        </div>
+        <div class="card-actions justify-end mt-4">
+            <button class="btn btn-sm btn-outline xl:max-2xl:btn-xs xl:p-3 ">View Details</button>
+            <button class="btn btn-sm btn-primary xl:max-2xl:btn-xs">Begin Survey</button>
+        </div>
+    </div>
+</div>
