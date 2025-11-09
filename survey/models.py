@@ -82,14 +82,3 @@ class LikertQuestion(Question):
             raise ValueError("Number of labels must match the scale range.")
         self.scale_labels = labels
         self.save()
-
-class Response(models.Model):
-    survey = models.ForeignKey(Survey, on_delete=models.CASCADE, related_name='responses')
-    respondent = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-
-class Answer(models.Model):
-    response = models.ForeignKey(Response, on_delete=models.CASCADE, related_name='answers')
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    answer_data = models.JSONField()
